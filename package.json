@@ -1,0 +1,32 @@
+{
+  "name": "react_learning",
+  "version": "1.0.0",
+  "description": "\"This is for practice\"",
+  
+  "scripts": {
+    "start":"parcel index.html",
+    "build":"parcel build index.html",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/senparnasha/react_learning.git"
+  },
+  "author": "Parnasha",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/senparnasha/react_learning/issues"
+  },
+  "homepage": "https://github.com/senparnasha/react_learning#readme",
+  "devDependencies": {
+    "parcel": "^2.10.3",
+    "process": "^0.11.10"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "browserslist":[
+    "last 2 Chrome version"
+  ]
+}

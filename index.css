@@ -1,0 +1,52 @@
+.header{
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid black;
+    height: 100px;
+    padding: 0px 10px;
+    
+}
+
+.logo{
+   
+width: 130px;
+
+
+}
+.nav-items > ul{
+    display: flex;
+    list-style-type: none;
+   
+   
+}
+
+.nav-items > ul >li{
+   padding: 10px;
+    margin: 10px;
+    font-size: 22px;
+    font-weight: 600;
+    color: rgb(86, 84, 84);
+    
+}
+
+.search{
+ padding: 15px;
+}
+
+.restro-container{
+    display: flex;
+    flex-wrap: wrap;
+   
+}
+.res-card{
+    padding: 10px;
+    height: 360px;
+    width:240px;
+    border: 1px solid black;
+    margin: 0px 10px;
+
+}
+.card-image{
+    height: 180px;
+    width:230px;
+}

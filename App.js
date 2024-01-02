@@ -115,10 +115,10 @@ const resObj={
 
 const RestroCard = (props) => {
   const restroData=props
-  console.log(restroData?.restroData?.info?.name)
+  console.log(restroData?.restroData?.info)
   return (
     <div className="res-card">
-        <img className="card-image" alt="res-card-image" src={biriyani}/>
+        <img className="card-image" alt="res-card-image" src={"https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660"+ restroData?.restroData?.info?. cloudinaryImageId}/>
       <div className="title">{restroData?.restroData?.info?.name}</div>
      
       <div className="sub-title">{restroData?.restroData?.info?.avgRating}

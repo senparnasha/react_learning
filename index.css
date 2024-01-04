@@ -29,8 +29,10 @@ width: 130px;
     
 }
 
-.search{
- padding: 15px;
+.top-rated-restro-btn{
+ padding: 8px;
+ margin: 15px;
+ cursor: pointer;
 }
 
 .restro-container{

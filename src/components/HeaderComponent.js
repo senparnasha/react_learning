@@ -1,6 +1,7 @@
 import React from "react";
 import logo from "../../logo.jpg";
 import {useState} from "react"
+import { Link } from "react-router-dom";
 
 const HeaderComponent = () => {
 const [btnName,setBtnName]=useState("Login")
@@ -18,10 +19,14 @@ if(btnName==="Login"){
         </div>
         <div className="nav-items">
           <ul>
-            <li>Home</li>
-            <li>About Us</li>
-            <li>Contact Us</li>
-            <li>Cart</li>
+            <li className="nav-items-title">
+              <Link to="/">  Home</Link> 
+              </li>
+            <li><Link to="/about">About Us</Link></li>
+            <li><Link to="/contact">Contact Us</Link></li>
+            <li>
+            <Link to="/cart">Cart</Link>
+            </li>
             <button onClick={handleLoginBtn} className="login-btn">{btnName}</button>
           </ul>
         </div>

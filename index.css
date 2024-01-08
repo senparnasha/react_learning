@@ -12,6 +12,7 @@
 .nav-items > ul {
   display: flex;
   list-style-type: none;
+ 
 }
 
 .nav-items > ul > li {
@@ -19,7 +20,10 @@
   margin: 10px;
   font-size: 22px;
   font-weight: 600;
-  color: rgb(86, 84, 84);
+
+}
+.nav-items-title{
+  color:red
 }
 
 .top-rated-restro-btn {

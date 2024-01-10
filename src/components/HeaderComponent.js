@@ -2,9 +2,11 @@ import React from "react";
 import logo from "../../logo.jpg";
 import {useState} from "react"
 import { Link } from "react-router-dom";
+import useOnlineStatus from "../utils/useOnlineStatus";
 
 const HeaderComponent = () => {
 const [btnName,setBtnName]=useState("Login")
+const onlineStatus=useOnlineStatus()
   const handleLoginBtn=()=>{
 if(btnName==="Login"){
   setBtnName("Logout")
@@ -19,6 +21,7 @@ if(btnName==="Login"){
         </div>
         <div className="nav-items">
           <ul>
+            <li>Online Status: { onlineStatus? "online":"offline"}</li>
             <li className="nav-items-title">
               <Link to="/">  Home</Link> 
               </li>
@@ -26,6 +29,9 @@ if(btnName==="Login"){
             <li><Link to="/contact">Contact Us</Link></li>
             <li>
             <Link to="/cart">Cart</Link>
+            </li>
+            <li>
+            <Link to="/grocery">Grocery</Link>
             </li>
             <button onClick={handleLoginBtn} className="login-btn">{btnName}</button>
           </ul>

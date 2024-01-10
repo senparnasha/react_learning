@@ -4,6 +4,7 @@ import RestroCard from "./RestroCard";
 import { useState, useEffect } from "react";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
+import useOnlineStatus from "../utils/useOnlineStatus";
 
 const MainBody = () => {
   const [listOfRestro, setListOfRestro] = useState([]);
@@ -22,11 +23,12 @@ const MainBody = () => {
       "https://www.swiggy.com/dapi/restaurants/list/v5?lat=22.5466549&lng=88.3482327&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
     );
     const json = await data.json();
+    // console.log("===========>>>>>",json?.data);
     setListOfRestro(
-      json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+      json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
     setFilteredRestro(
-      json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+      json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
   };
   const handleTopRatedRestroFind = () => {
@@ -42,7 +44,15 @@ const MainBody = () => {
     setFilteredRestro(filteredRestro);
   };
 
-  return listOfRestro.length === 0 ? (
+const onlineStatus=useOnlineStatus()
+console.log(onlineStatus)
+if (onlineStatus === false) {
+  return <h1>Looks like you are offline!! Check your internet connection;</h1>;
+}
+
+
+
+return listOfRestro?.length === 0 ? (
     <>
       <Shimmer />
     </>

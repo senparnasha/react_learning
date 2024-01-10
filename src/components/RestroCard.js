@@ -1,6 +1,6 @@
 import React from "react";
-import {CDN_URL} from "../utils/constants"
-import "../../index.css"
+import { CDN_URL } from "../utils/constants";
+import "../../index.css";
 
 const RestroCard = (props) => {
   const restroData = props;
@@ -16,14 +16,11 @@ const RestroCard = (props) => {
   } = restroData?.restroData?.info;
   const { slaString } = sla || {};
   return (
-    <div className="res-card">
+    <div className="res-card ">
       <img
         className="card-image"
         alt="res-card-image"
-        src={
-           CDN_URL +
-          cloudinaryImageId
-        }
+        src={CDN_URL + cloudinaryImageId}
       />
       <div className="title">{name}</div>
 
@@ -33,7 +30,6 @@ const RestroCard = (props) => {
       </div>
       <div className="res-info">{cuisines.join(", ")}</div>
       <div className="res-info">{costForTwo}</div>
-
       <div className="res-info">{locality}</div>
     </div>
   );

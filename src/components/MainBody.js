@@ -54,14 +54,15 @@ if (onlineStatus === false) {
 
 return listOfRestro?.length === 0 ? (
     <>
-      <Shimmer />
+   jhgjgjgjgj
+   <Shimmer/>
     </>
   ) : (
     <div className="body">
-      <div className="top-rated-restro">
-        <div className="search">
+      <div className="top-rated-restro flex">
+        <div className="search mx-8 my-4 ">
           <input
-            className="search-input"
+            className="search-input p-1 bg-slate-100 text-slate-700 rounded-md"
             type="text"
             placeholder="Search here"
             value={searchText}
@@ -69,18 +70,18 @@ return listOfRestro?.length === 0 ? (
               setSearchText(e.target.value);
             }}
           />
-          <button className="search-btn" onClick={handleSearch}>
+          <button className="search-btn px-4 py-1 rounded-md font-bold text-slate-600 bg-slate-200 mx-2" onClick={handleSearch}>
             Search
           </button>
         </div>
         <button
-          className="top-rated-restro-btn"
+          className=" px-4 py-1 rounded-md font-bold text-slate-600 bg-slate-200 mx-1 my-4"
           onClick={handleTopRatedRestroFind}
         >
           Top Rated Resturants
         </button>
       </div>
-      <div className="restro-container">
+      <div className="restro-container m-2 p-4 flex flex-wrap ">
         {filteredRestro.map((eachRestro) => {
           return (
             <Link key={eachRestro.info.id}  to={"/resturants/"+eachRestro.info.id}  ><RestroCard restroData={eachRestro} /></Link>

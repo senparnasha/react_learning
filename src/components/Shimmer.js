@@ -3,21 +3,18 @@ import React from "react";
 const Shimmer = () => {
   return (
     <>
-      <div className="shimmer-container">
-        <div className="shimmer-cards"></div>
-        <div className="shimmer-cards"></div>
-        <div className="shimmer-cards"></div>
-        <div className="shimmer-cards"></div>
-        <div className="shimmer-cards"></div>
-        <div className="shimmer-cards"></div>
-        <div className="shimmer-cards"></div>
-        <div className="shimmer-cards"></div>
-        <div className="shimmer-cards"></div>
-        <div className="shimmer-cards"></div>
-        <div className="shimmer-cards"></div>
-        <div className="shimmer-cards"></div>
-        <div className="shimmer-cards"></div>
-        <div className="shimmer-cards"></div>
+      <div className="w-full flex flex-wrap m-4">
+        <div className=" w-56 bg-slate-900"></div>
+        <div className="w-56 bg-slate-900"></div>
+        <div className="w-56 bg-slate-900"></div>
+        <div className="w-56 bg-slate-900"></div>
+        <div className="w-56 bg-slate-900"></div>
+        <div className="w-56 bg-slate-900"></div>
+        <div className="w-56 bg-slate-900"></div>
+        <div className="w-56 bg-slate-900"></div>
+        <div className="w-56 bg-slate-900"></div>
+
+      
 </div>
     </>
   );

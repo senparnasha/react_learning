@@ -16,21 +16,21 @@ const RestroCard = (props) => {
   } = restroData?.restroData?.info;
   const { slaString } = sla || {};
   return (
-    <div className="res-card ">
+    <div className="res-card w-56 p-3 rounded-md bg-slate-100 m-3 hover:bg-slate-200">
       <img
-        className="card-image"
+        className=" rounded-md "
         alt="res-card-image"
         src={CDN_URL + cloudinaryImageId}
       />
-      <div className="title">{name}</div>
+      <div className="text-xl font-bold text-slate-600">{name}</div>
 
-      <div className="sub-title">
-        {avgRating}
+      <div className="text-md font-bold text-slate-500">
+        {avgRating}<span>*</span>
         <span style={{ marginLeft: "5px" }}>.{slaString}</span>
       </div>
-      <div className="res-info">{cuisines.join(", ")}</div>
-      <div className="res-info">{costForTwo}</div>
-      <div className="res-info">{locality}</div>
+      <div className="text-sm font-semibold text-slate-500">{cuisines.join(", ")}</div>
+      <div className="text-md font-semibold text-slate-600">{costForTwo}</div>
+      <div className="text-sm font-semibold text-slate-500">{locality}</div>
     </div>
   );
 };

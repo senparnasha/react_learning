@@ -4,15 +4,12 @@ import Shimmer from "./Shimmer";
 import { useParams } from "react-router-dom";
 import useRestroMenu from "../utils/useRestroMenu";
 
-
 const ResturantMenu = () => {
-  
   const { resId } = useParams();
   console.log(resId);
 
+  const resInfo = useRestroMenu(resId);
 
- const resInfo=useRestroMenu(resId)
- 
   if (resInfo === null) {
     return (
       <>
@@ -29,6 +26,13 @@ const ResturantMenu = () => {
     "====",
     resInfo?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card
   );
+
+  console.log(
+    "====  recomended",
+    resInfo?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards.filter((category)=>{
+      category.card.card
+    })
+  );
   return (
     <div>
       <h1>{name}</h1>
@@ -42,7 +46,8 @@ const ResturantMenu = () => {
             return (
               <li key={item.card.info.id}>
                 {item.card.info.name}- {"Rs."}
-                {item.card.info.price}{" "}
+                {item.card.info.price / 100 ||
+                  item.card.info.defaultPrice / 100}{" "}
               </li>
             );
           })}

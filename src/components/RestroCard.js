@@ -35,4 +35,15 @@ const RestroCard = (props) => {
   );
 };
 
+
+export const withPromotedLabel=(RestroCard)=>{
+  return (props)=>{
+    return(
+      <>
+      <p>Promoted</p>
+      <RestroCard {...props}/>
+      </>
+    )
+  }
+}
 export default RestroCard;

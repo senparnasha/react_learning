@@ -1,5 +1,5 @@
 import React from "react";
-import RestroCard from "./RestroCard";
+import RestroCard ,{withPromotedLabel}from "./RestroCard";
 
 import { useState, useEffect } from "react";
 import Shimmer from "./Shimmer";
@@ -11,7 +11,8 @@ const MainBody = () => {
   const [filteredRestro, setFilteredRestro] = useState([]);
   const [searchText, setSearchText] = useState("");
 
-  console.log("body rendered");
+  console.log("body rendered", listOfRestro);
+  const PromotedRestro=withPromotedLabel(RestroCard)
 
   useEffect(() => {
     console.log("useEffect");
@@ -25,10 +26,10 @@ const MainBody = () => {
     const json = await data.json();
     // console.log("===========>>>>>",json?.data);
     setListOfRestro(
-      json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+      json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
     setFilteredRestro(
-      json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+      json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
   };
   const handleTopRatedRestroFind = () => {
@@ -84,7 +85,11 @@ return listOfRestro?.length === 0 ? (
       <div className="restro-container m-2 p-4 flex flex-wrap ">
         {filteredRestro.map((eachRestro) => {
           return (
-            <Link key={eachRestro.info.id}  to={"/resturants/"+eachRestro.info.id}  ><RestroCard restroData={eachRestro} /></Link>
+            <Link key={eachRestro.info.id}  to={"/resturants/"+eachRestro.info.id}  >
+              {eachRestro.info.promoted? <PromotedRestro restroData={eachRestro}/>: <RestroCard restroData={eachRestro} />} 
+             
+              
+              </Link>
           );
         })}
       </div>
